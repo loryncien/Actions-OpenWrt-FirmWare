@@ -27,9 +27,8 @@ git clone -b master https://github.com/vernesong/OpenClash.git package/openwrt-p
 
 echo '下载 luci-app-sqm'
 #svn co https://github.com/siropboy/sirpdboy-package/trunk/luci-app-sqm package/openwrt-packages/luci-app-sqm
-svn co https://github.com/openwrt/luci/trunk/applications/luci-app-sqm package/openwrt-packages/luci-app-sqm
-rm -rf package/sirpdboy-package/luci-app-sqm
-sed -i 's/..\/..\/luci.mk/\$\(TOPDIR\)\/feeds\/luci\/luci.mk/g' package/openwrt-packages/luci-app-sqm/Makefile
+#svn co https://github.com/openwrt/luci/trunk/applications/luci-app-sqm package/openwrt-packages/luci-app-sqm
+sed -i 's/"control"/"network"/g' package/sirpdboy-package/luci-app-sqm/luasrc/controller/sqm.lua
 echo '下载 sqm-scripts'
 #svn co https://github.com/siropboy/sirpdboy-package/trunk/sqm-scripts package/openwrt-packages/sqm-scripts
 svn co https://github.com/openwrt/packages/trunk/net/sqm-scripts package/openwrt-packages/sqm-scripts
